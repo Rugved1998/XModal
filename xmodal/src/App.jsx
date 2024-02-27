@@ -158,7 +158,7 @@ const inputStyle = {
                 type="button"
                 onClick={submitForm}
                 style={buttonStyle}
-                className=''
+                className='submit-button'
               >
                 Submit
               </button>
