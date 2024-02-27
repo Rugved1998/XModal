@@ -123,7 +123,7 @@ const inputStyle = {
               <label htmlFor="email">Email Address:</label>
               <input
                 type="email"
-                id="#email"
+                id="email"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 required
