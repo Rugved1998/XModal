@@ -1,6 +1,5 @@
-// App.js
-
 import React, { useState } from 'react';
+import "./App.css"
 
 export default function App() {
   const [modalOpen, setModalOpen] = useState(false);
@@ -105,8 +104,8 @@ const inputStyle = {
       <button style={buttonStyle} onClick={openForm}>Open Form</button>
       </div>
       {modalOpen && (
-        <div style={modalStyle} onClick={closeForm}>
-          <div style={modalContentStyle} onClick={(e) => e.stopPropagation()}>
+        <div className='modal' onClick={closeForm}>
+          <div className='modal-content' onClick={(e) => e.stopPropagation()}>
             
             <form style={formStyle}>
             <h2>Fill details</h2>
@@ -159,6 +158,7 @@ const inputStyle = {
                 type="button"
                 onClick={submitForm}
                 style={buttonStyle}
+                className=''
               >
                 Submit
               </button>
