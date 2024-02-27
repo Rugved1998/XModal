@@ -17,29 +17,37 @@ export default function App() {
   };
 
   const submitForm = () => {
-    if (!username || !email || !phone || !dob) {
-      alert('Please fill out all the fields.');
-      return;
-    }
-
-    // Email validation
-    if (!/^\S+@\S+\.\S+$/.test(email)) {
+     // Email validation
+     if (!/^\S+@\S+\.\S+$/.test(email)) {
       alert('Invalid email. Please check your email address.');
       return;
     }
 
+    //Phone validation
     if (!/^\d{10}$/.test(phone)) {
       alert('Invalid phone number. Please enter a 10-digit phone number.');
       return;
     }
 
-    // Date of birth validation
+     // Date of birth validation
      const currentDate = new Date();
     const inputDate = new Date(dob);
     if (inputDate > currentDate) {
       alert('Invalid date of birth. Date of birth cannot be in the future.');
       return;
     }
+
+    //All Filds Validation
+    if (!username || !email || !phone || !dob) {
+      alert('Please fill out all the fields.');
+      return;
+    }
+
+   
+
+    
+
+   
 
     // Form submission successful
     alert('Form submitted successfully!');
