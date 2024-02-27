@@ -15,3 +15,8 @@
   padding: 20px;
   border-radius: 5px;
 }
+.submit-button{
+  background-color:#0000FF;
+  color:#ffffff;
+  width:100px;
+}

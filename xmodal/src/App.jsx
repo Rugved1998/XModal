@@ -23,20 +23,20 @@ export default function App() {
     }
 
     // Email validation
-    if (!email.includes('@')) {
+    if (!/^\S+@\S+\.\S+$/.test(email)) {
       alert('Invalid email. Please check your email address.');
       return;
     }
 
-    // Phone number validation
     if (!/^\d{10}$/.test(phone)) {
       alert('Invalid phone number. Please enter a 10-digit phone number.');
       return;
     }
 
     // Date of birth validation
-    const currentDate = new Date();
-    if (new Date(dob) > currentDate) {
+     const currentDate = new Date();
+    const inputDate = new Date(dob);
+    if (inputDate > currentDate) {
       alert('Invalid date of birth. Date of birth cannot be in the future.');
       return;
     }
@@ -123,7 +123,7 @@ const inputStyle = {
               <label htmlFor="email">Email Address:</label>
               <input
                 type="email"
-                id="email"
+                id="#email"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 required
@@ -157,7 +157,6 @@ const inputStyle = {
               <button
                 type="button"
                 onClick={submitForm}
-                style={buttonStyle}
                 className='submit-button'
               >
                 Submit
