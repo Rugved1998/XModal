@@ -47,15 +47,69 @@ export default function App() {
     closeForm();
   };
 
-  return (
-    <div>
-      <button onClick={openForm}>Open Form</button>
 
+
+  const modalStyle = {
+    // display: 'none',
+    // position: 'fixed',
+    // top: 0,
+    // left: 0,
+    // width: '100%',
+    // height: '100%',
+    // backgroundColor: 'rgba(0, 0, 0, 0.5)',
+    // justifyContent: 'center',
+    // alignItems: 'center',
+  };
+
+  
+const modalContentStyle = {
+  // backgroundColor: '#fff',
+  // padding: '20px',
+  // borderRadius: '5px',
+};
+
+const formStyle={
+  display: "flex",
+    flexDirection:"column",
+    justifyContent:"center",
+    alignItems:"center"
+}
+
+const labelStyle = {
+  display: 'block',
+  marginBottom: '8px',
+};
+
+const inputStyle = {
+  
+  padding: '8px',
+  marginBottom: '16px',
+};
+  
+  const buttonStyle={
+    backgroundColor:"#0000FF",
+    color:"#ffffff",
+    width:"100px"
+  }
+  const pageStyle={
+    display: "flex",
+    flexDirection:"column",
+    justifyContent:"center",
+    alignItems:"center"
+  }
+
+  return (
+    <div >
+      <div style={pageStyle}>
+      <h1>User Details Modal</h1>
+      <button style={buttonStyle} onClick={openForm}>Open Form</button>
+      </div>
       {modalOpen && (
-        <div className="modal" onClick={closeForm}>
-          <div className="modal-content" onClick={(e) => e.stopPropagation()}>
+        <div style={modalStyle} onClick={closeForm}>
+          <div style={modalContentStyle} onClick={(e) => e.stopPropagation()}>
+            
+            <form style={formStyle}>
             <h2>Fill details</h2>
-            <form>
               <label htmlFor="username">Username:</label>
               <input
                 type="text"
@@ -63,6 +117,8 @@ export default function App() {
                 value={username}
                 onChange={(e) => setUsername(e.target.value)}
                 required
+                style={inputStyle}
+                size="100"
               />
 
               <label htmlFor="email">Email Address:</label>
@@ -72,6 +128,8 @@ export default function App() {
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 required
+                style={inputStyle}
+                size="100"
               />
 
               <label htmlFor="phone">Phone Number:</label>
@@ -82,6 +140,8 @@ export default function App() {
                 onChange={(e) => setPhone(e.target.value)}
                 pattern="[0-9]{10}"
                 required
+                style={inputStyle}
+                size="100"
               />
 
               <label htmlFor="dob">Date of Birth:</label>
@@ -91,12 +151,14 @@ export default function App() {
                 value={dob}
                 onChange={(e) => setDob(e.target.value)}
                 required
+                style={inputStyle}
+                size="50"
               />
 
               <button
                 type="button"
-                className="submit-button"
                 onClick={submitForm}
+                style={buttonStyle}
               >
                 Submit
               </button>
